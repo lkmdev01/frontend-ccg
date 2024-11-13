@@ -25,7 +25,7 @@ const siteInfo = ref<SiteInfo | null>(null); // Usando a interface para o tipo
 
 const fetchSiteInfo = async () => {
   try {
-    const response = await axios.get('http://localhost:8000/api/site-info');
+    const response = await axios.get('http://backend-ccg-production.up.railway.app/api/site-info');
     siteInfo.value = response.data[0]; // Pega o primeiro item da lista
   } catch (error) {
     console.error('Erro ao buscar informações do site:', error);

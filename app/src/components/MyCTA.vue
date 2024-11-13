@@ -72,7 +72,7 @@ const formData = ref<{ [key: string]: string }>({});
 // Função para buscar dados dos campos do formulário da API
 const fetchFormFields = async () => {
   try {
-    const response = await axios.get('http://localhost:8000/api/pages/home');
+    const response = await axios.get('http://backend-ccg-production.up.railway.app/api/pages/home');
     formFields.value = response.data.formFields;
 
     // Inicializa `formData` com as chaves dos campos do formulário

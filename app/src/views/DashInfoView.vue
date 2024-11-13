@@ -100,7 +100,7 @@ const siteInfo = ref({
 // Função para carregar informações do backend
 async function loadSiteInfo() {
   try {
-    const response = await axios.get('http://localhost:8000/api/site-info');
+    const response = await axios.get('http://backend-ccg-production.up.railway.app/api/site-info');
     siteInfo.value = response.data;
     console.log(response);
   } catch (error) {
@@ -111,7 +111,7 @@ async function loadSiteInfo() {
 // Função para atualizar informações no backend
 async function updateSiteInfo() {
   try {
-    await axios.post('http://localhost:8000/api/site-info', siteInfo.value);
+    await axios.post('http://backend-ccg-production.up.railway.app/api/site-info', siteInfo.value);
     alert('Informações atualizadas com sucesso!');
   } catch (error) {
     console.error('Erro ao atualizar informações do site:', error);
