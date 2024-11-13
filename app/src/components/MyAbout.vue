@@ -76,7 +76,7 @@ const aboutText = ref('');
 // Função para buscar os dados da seção "Sobre Nós" da API
 const fetchAboutData = async () => {
   try {
-    const response = await axios.get('http://backend-ccg-production.up.railway.app/api/pages/home'); // URL correta
+    const response = await axios.get('https://backend-ccg-production.up.railway.app/api/pages/home'); // URL correta
     const sections = response.data.sections; // Presumindo que as seções estão na propriedade 'sections'
 
     // Encontrando a seção "Sobre" (id 1)

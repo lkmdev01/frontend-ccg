@@ -32,7 +32,7 @@ const collaborationText = ref('');
 
 const fetchCollaborationData = async () => {
   try {
-    const response = await axios.get('http://backend-ccg-production.up.railway.app/api/pages/home');
+    const response = await axios.get('https://backend-ccg-production.up.railway.app/api/pages/home');
     const sections: Section[] = response.data.sections;
     const collaborationSection = sections.find((section: Section) => section.section_name === 'colaboracao');
     if (collaborationSection) {
