@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.vercel-live-feedback-full-frame {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.mycontainer {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.bg-azul {
+  background-color: #3d6090;
+}
