@@ -1,7 +1,7 @@
 import axios from 'axios'; // Importação do axios
 
 const axiosInstance = axios.create({
-  baseURL: process.env.VUE_APP_API_URL,
+  baseURL: import.meta.env.VITE_APP_API_URL, // Alterado para usar import.meta.env
   headers: {
     'Content-Type': 'application/json',
   }

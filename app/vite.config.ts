@@ -16,12 +16,8 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',  // Permite conexões externas (por exemplo, de um contêiner)
     port: 5173,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8000',  // URL do backend Slim
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),  // Remove o prefixo "/api" da chamada antes de passar para o backend
-      },
-    },
+  },
+  define: {
+    'process.env': process.env,  // Adiciona o `process.env` para o Vite substituir no código
   },
 });
