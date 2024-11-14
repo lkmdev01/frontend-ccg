@@ -67,7 +67,7 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
-import axios from 'axios';
+import axiosInstance from '@/services/axiosInstance';
 
 // Referências reativas para o título e o texto da seção "Sobre"
 const aboutTitle = ref('');
@@ -76,7 +76,7 @@ const aboutText = ref('');
 // Função para buscar os dados da seção "Sobre Nós" da API
 const fetchAboutData = async () => {
   try {
-    const response = await axios.get('https://backend-ccg-production.up.railway.app/api/pages/home'); // URL correta
+    const response = await axiosInstance.get('https://backend-ccg-production.up.railway.app/api/pages/home'); // URL correta
     const sections = response.data.sections; // Presumindo que as seções estão na propriedade 'sections'
 
     // Encontrando a seção "Sobre" (id 1)
