@@ -24,7 +24,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import axiosInstance from '@/services/axiosInstance';
+import axios from 'axios';
+
 
 // Interface para definir a estrutura dos dados de eventos no formato desejado
 interface EventTime {
@@ -45,7 +46,7 @@ const events = ref<Event[]>([]);
 // Função para buscar os dados dos eventos da API e formatá-los
 const fetchEventsData = async () => {
   try {
-    const response = await axiosInstance.get('/api/pages/home');
+    const response = await axios.get('https://backend-ccg-production.up.railway.app/api/pages/home');
 
     // Mapeando os dados da API para o formato desejado no componente, usando o tipo `Event`
     events.value = response.data.events.map((event: { id: number; day_of_week: string; event_time: string; event_name: string }) => ({
@@ -63,6 +64,7 @@ const fetchEventsData = async () => {
     console.error("Erro ao buscar dados dos eventos:", error);
   }
 };
+
 
 // Executa a função de busca ao montar o componente
 onMounted(fetchEventsData);
