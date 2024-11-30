@@ -46,7 +46,7 @@ const events = ref<Event[]>([]);
 // Função para buscar os dados dos eventos da API e formatá-los
 const fetchEventsData = async () => {
   try {
-    const response = await axios.get('https://backend-ccg-production.up.railway.app/api/pages/home');
+    const response = await axios.get(`${import.meta.env.VITE_BACKEND_DEV_API_URL}/pages/home`);
 
     // Mapeando os dados da API para o formato desejado no componente, usando o tipo `Event`
     events.value = response.data.events.map((event: { id: number; day_of_week: string; event_time: string; event_name: string }) => ({

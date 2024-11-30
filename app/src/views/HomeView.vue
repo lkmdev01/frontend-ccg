@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import MyHero from '../components/MyHero.vue'
+// import MyHero from '../components/MyHero.vue'
+import MyHeroGif from '../components/MyHeroGif.vue'
 import MyAbout from '../components/MyAbout.vue'
 import MySchedules from '../components/MySchedules.vue'
 import MyGallery from '../components/MyGallery.vue'
@@ -13,7 +14,8 @@ import DefaultLayout from '../layouts/DefaultLayout.vue'
 <template>
   <main>
     <DefaultLayout>
-      <MyHero></MyHero>
+      <!-- <MyHero></MyHero> -->
+      <MyHeroGif></MyHeroGif>
       <MyAbout></MyAbout>
       <MySchedules></MySchedules>
       <MyGallery></MyGallery>

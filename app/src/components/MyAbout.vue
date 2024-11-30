@@ -18,49 +18,6 @@
       <p class="max-w-md">
         {{ aboutText }}
       </p>
-      <!-- Lista de ícones de redes sociais -->
-      <ul class="flex justify-center md:justify-start space-x-4 mt-4">
-        <li>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-600 hover:text-blue-600"
-          >
-            <i class="fab fa-facebook fa-2x"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-600 hover:text-pink-500"
-          >
-            <i class="fab fa-instagram fa-2x"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-600 hover:text-blue-400"
-          >
-            <i class="fab fa-twitter fa-2x"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-gray-600 hover:text-blue-700"
-          >
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
-        </li>
-      </ul>
     </div>
   </div>
 </template>
@@ -76,7 +33,7 @@ const aboutText = ref('');
 // Função para buscar os dados da seção "Sobre Nós" da API
 const fetchAboutData = async () => {
   try {
-    const response = await axiosInstance.get('https://backend-ccg-production.up.railway.app/api/pages/home'); // URL correta
+    const response = await axiosInstance.get(`${import.meta.env.VITE_BACKEND_DEV_API_URL}/pages/home`);
     const sections = response.data.sections; // Presumindo que as seções estão na propriedade 'sections'
 
     // Encontrando a seção "Sobre" (id 1)

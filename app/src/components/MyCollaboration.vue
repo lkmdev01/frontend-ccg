@@ -19,7 +19,6 @@ import { useRouter } from 'vue-router';
 import axios from 'axios';
 import axiosInstance from '@/services/axiosInstance';
 
-
 interface Section {
   id: number;
   page_id: number;
@@ -34,7 +33,7 @@ const collaborationText = ref('');
 
 const fetchCollaborationData = async () => {
   try {
-    const response = await axiosInstance.get('https://backend-ccg-production.up.railway.app/api/pages/home');
+    const response = await axiosInstance.get(`${import.meta.env.VITE_BACKEND_DEV_API_URL}/pages/home`);
     const sections: Section[] = response.data.sections;
     const collaborationSection = sections.find((section: Section) => section.section_name === 'colaboracao');
     if (collaborationSection) {
