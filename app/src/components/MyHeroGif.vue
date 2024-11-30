@@ -9,7 +9,7 @@ import { ref, onMounted } from 'vue';
 const gifSrc = ref('');
 
 onMounted(() => {
-  gifSrc.value = 'src/assets/background-gif.gif'; // Caminho do GIF animado
+  gifSrc.value = '/background-gif.gif'; // Caminho do GIF animado
 });
 </script>
 
