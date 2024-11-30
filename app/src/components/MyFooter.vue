@@ -23,7 +23,7 @@
         Copyright © 2024 - Todos os direitos reservados pela
         <b>Comunidade Cristã de Guarujá</b>
       </p>
-      <p>Feito por <a href="https://github.com/boostagv" target="_blank">boost.agv</a></p>
+      <p>Feito por <a href="https://inovaforce.com" target="_blank">inovaforce.com</a></p>
     </aside>
   </footer>
 </template>
