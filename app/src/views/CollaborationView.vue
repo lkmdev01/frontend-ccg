@@ -16,7 +16,7 @@
             <h5 class="text-xl font-bold">PIX</h5>
             <p>
               Contribua através da nossa chave pix: <br />
-              email: celulahelenamaria@gmail.com
+              email:  ofertas.ccg@gmail.com
             </p>
           </div>
           <div class="col-span-1">
@@ -25,7 +25,7 @@
             </h5>
             <p>
               Faça uma visita e contribua pessoalmente. <br />
-              Rua Rafael Gonzalez, 523 - JD. Helena Maria, Guarujá - SP, 11431-070 -
+              Rua das Cravinas, 37 - JD. Primavera, Guarujá - SP, 11432-310 -
               Brasil
             </p>
           </div>
