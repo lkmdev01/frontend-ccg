@@ -18,6 +18,9 @@
         </a>
       </div>
     </nav>
+
+      <GoogleMap></GoogleMap>
+
     <aside class="mt-4">
       <p>
         Copyright © 2024 - Todos os direitos reservados pela
@@ -31,6 +34,7 @@
 <script lang="ts" setup>
 
 import { useRouter, useRoute } from 'vue-router';
+import GoogleMap from './GoogleMap.vue';
 
 const router = useRouter();
 const route = useRoute();
