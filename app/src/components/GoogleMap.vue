@@ -14,4 +14,3 @@ const center = { lat: -23.99138943553711, lng: -46.270881401253476 }
     <Marker :options="{ position: center }" />
   </GoogleMap>
 </template>
-

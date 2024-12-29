@@ -5,11 +5,24 @@
       :key="index"
       :content="slide"
     >
-      <div
-        class="carousel__item"
-        :style="{ backgroundImage: `url(${slide.src})` }"
-      >
-        <img :src="slide.src" :alt="slide.alt" class="carousel-image" />
+      <div class="carousel__item">
+        <!-- Verifica se é um vídeo -->
+        <template v-if="slide.type === 'video'">
+          <video
+            :src="slide.src"
+            autoplay
+            loop
+            muted
+            playsinline
+            class="carousel-video"
+          ></video>
+        </template>
+        <!-- Caso contrário, exibe como imagem -->
+        <template v-else>
+          <div :style="{ backgroundImage: `url(${slide.src})` }">
+            <img :src="slide.src" :alt="slide.alt" class="carousel-image" />
+          </div>
+        </template>
       </div>
     </Slide>
   </Carousel>
@@ -21,10 +34,12 @@ import { Carousel, Slide } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
 import loadSlides from '../utils/loadSlides';
 
-const slides = ref<{ src: string; alt: string }[]>([]);
+// Define os slides com um campo adicional "type"
+const slides = ref<{ src: string; alt: string; type: string }[]>([]); // Adicionado "type"
 const screenWidth = ref(window.innerWidth);
 
 const loadCarouselSlides = async () => {
+  // Aqui, adicione os dados do tipo de mídia (imagem ou vídeo)
   slides.value = await loadSlides();
   console.log("Slides carregados:", slides.value);
 };
@@ -71,7 +86,13 @@ onBeforeUnmount(() => {
   background-repeat: no-repeat;
 }
 
-.carousel__item img {
+.carousel-image {
+  width: 100%;
+  /* height: auto; */
+  object-fit: cover;
+}
+
+.carousel-video {
   width: 100%;
   height: auto;
   object-fit: cover;
